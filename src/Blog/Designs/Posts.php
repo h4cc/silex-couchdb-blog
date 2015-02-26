@@ -19,7 +19,7 @@ class Posts implements DesignDocument
                     'map' => 'function(doc) {
                         if(\'blog.post\' == doc.type) {
                             var date = new Date(Date.parse(doc.created));
-                            emit([date.getFullYear(), date.getMonth() + 1, date.getDate() + 1], doc._id);
+                            emit([date.getFullYear(), date.getMonth() + 1, date.getDate()], doc._id);
                         }
                     }',
                     'reduce' => '_count'

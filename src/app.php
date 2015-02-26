@@ -31,17 +31,6 @@ $app['twig'] = $app->extend('twig', function ($twig, $app) {
     return $twig;
 });
 
-$app['couchdb.options'] = array(
-    'dbname' => 'silex_blog2',
-    'type' => 'socket',
-    'host' => 'localhost',
-    'port' => 5984,
-    'user' => null,
-    'password' => null,
-    'ip' => null,
-    'logging' => true
-);
-
 $app['couchdb.client'] = function ($app) {
     return \Doctrine\CouchDB\CouchDBClient::create($app['couchdb.options']);
 };

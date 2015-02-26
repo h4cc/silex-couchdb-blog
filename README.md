@@ -102,7 +102,7 @@ This view does the following:
     'map' => 'function(doc) {
         if(\'blog.post\' == doc.type) {
             var date = new Date(Date.parse(doc.created));
-            emit([date.getFullYear(), date.getMonth() + 1, date.getDate() + 1], doc._id);
+            emit([date.getFullYear(), date.getMonth() + 1, date.getDate()], doc._id);
         }
     }',
     'reduce' => '_count'
@@ -111,7 +111,7 @@ This view does the following:
 
 Next to `by_tag`, this view does another trick:
 
-1. Using the key `[date.getFullYear(), date.getMonth() + 1, date.getDate() + 1]` will result in a key like `[2015, 2, 26]`.
+1. Using the key `[date.getFullYear(), date.getMonth() + 1, date.getDate()]` will result in a key like `[2015, 2, 26]`.
 2. This allows queries like:
     * All documents in 2015
     * Count all documents in 2015
