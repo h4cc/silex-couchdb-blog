@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <h2>History</h2>
+
+
+
+    {% for year in years %}
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    <a href="{{ path('history_year', {'year': year.year}) }}"><b>{{ year.year }}:</b> {{ year.count }} Posts</a>
+                </h3>
+            </div>
+            <div class="panel-body">
+                <a href="{{ path('history_date', {'year': year.year}) }}">Show all</a>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
+
+

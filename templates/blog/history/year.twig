@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <h2>History: {{ year }}</h2>
+
+    {% for month in months %}
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    <a href="{{ path('history_month', {'year': year, 'month': month.month}) }}"><b>{{ year }}.{{ month.month }}:</b> {{ month.count }} Posts</a>
+                </h3>
+            </div>
+            <div class="panel-body">
+                <a href="{{ path('history_date', {'year': year, 'month': month.month}) }}">Show all</a>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
+
+

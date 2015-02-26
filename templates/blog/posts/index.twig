@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <h2>Listing posts</h2>
+
+    {% for post in posts %}
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    <a href="{{ path('post_read', {id: post.id}) }}">{{ post.title }} <small>[{{ post.created|date }}]</small></a>
+                </h3>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
+
+

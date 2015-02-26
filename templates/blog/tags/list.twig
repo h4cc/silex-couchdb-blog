@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <h2>Listing Tags</h2>
+
+    <ul>
+    {% for tag in tags %}
+        <li><a href="{{ path('tag', {tag: tag.name}) }}">{{ tag.name }} ({{ tag.count }})</a></li>
+    {% endfor %}
+    </ul>
+{% endblock %}
+
+

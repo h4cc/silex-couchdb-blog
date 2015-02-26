@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title '' %}</title>
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <link href="{{ asset('css/main.css') }}" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+
+<a href="{{ path('homepage') }}"><h1>Blog using Silex and CouchDB</h1></a>
+
+<ul class="nav nav-pills nav-justified">
+    <li><a href="{{ path('posts') }}">Posts</a></li>
+    <li><a href="{{ path('tags') }}">Tags</a></li>
+    <li><a href="{{ path('history') }}">History</a></li>
+    <li><a href="{{ path('posts_add') }}">Write Post</a></li>
+</ul>
+{% block content %}{% endblock %}
+
+</body>
+</html>
